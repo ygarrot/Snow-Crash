@@ -27,7 +27,7 @@
  80484ef:	89 04 24             	mov    DWORD PTR [esp],eax      // esp = eax
 
  80484f2:	e8 89 fe ff ff       	call   8048380 <setresuid@plt>
- 80484f7:	c7 04 24 e0 85 04 08 	mov    DWORD PTR [esp],0x80485e0
+ 80484f7:	c7 04 24 e0 85 04 08 	mov    DWORD PTR [esp],0x80485e0 // /usr/bin/env echo Exploit me
  80484fe:	e8 ad fe ff ff       	call   80483b0 <system@plt>
  8048503:	c9                   	leave
  8048504:	c3                   	ret
