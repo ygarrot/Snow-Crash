@@ -1,0 +1,83 @@
+
+08048450 <main>:
+ 8048450:	8d 4c 24 04          	lea    ecx,[esp+0x4]
+ 8048454:	83 e4 f0             	and    esp,0xfffffff0
+ 8048457:	ff 71 fc             	push   DWORD PTR [ecx-0x4]
+ 804845a:	55                   	push   ebp
+ 804845b:	89 e5                	mov    ebp,esp
+ 804845d:	57                   	push   edi
+ 804845e:	56                   	push   esi
+ 804845f:	53                   	push   ebx
+ 8048460:	51                   	push   ecx
+ 8048461:	83 ec 44             	sub    esp,0x44
+
+ 8048464:	8b 79 04             	mov    edi,DWORD PTR [ecx+0x4]
+ 8048467:	8b 49 08             	mov    ecx,DWORD PTR [ecx+0x8]
+
+ 804846a:	68 d4 87 04 08       	push   0x80487d4
+ 804846f:	89 4d c4             	mov    DWORD PTR [ebp-0x3c],ecx
+ 8048472:	e8 69 ff ff ff       	call   80483e0 <strdup@plt>
+ 8048477:	c7 04 24 d4 87 04 08 	mov    DWORD PTR [esp],0x80487d4
+ 804847e:	89 c6                	mov    esi,eax 						// esi = eax
+
+ 8048480:	e8 5b ff ff ff       	call   80483e0 <strdup@plt>
+ 8048485:	83 c4 10             	add    esp,0x10
+
+ 8048488:	83 7f 04 00          	cmp    DWORD PTR [edi+0x4],0x0
+ 804848c:	89 c3                	mov    ebx,eax
+ 804848e:	74 34                	je     80484c4 <main+0x74> <=jump getegid
+ 8048490:	83 ec 0c             	sub    esp,0xc
+ 8048493:	56                   	push   esi
+ 8048494:	e8 37 ff ff ff       	call   80483d0 <free@plt>
+ 8048499:	58                   	pop    eax
+ 804849a:	ff 77 04             	push   DWORD PTR [edi+0x4]
+ 804849d:	e8 3e ff ff ff       	call   80483e0 <strdup@plt>
+ 80484a2:	83 c4 10             	add    esp,0x10
+ 80484a5:	83 7f 08 00          	cmp    DWORD PTR [edi+0x8],0x0
+ 80484a9:	89 c6                	mov    esi,eax
+ 80484ab:	74 17                	je     80484c4 <main+0x74>
+ 80484ad:	83 ec 0c             	sub    esp,0xc
+ 80484b0:	53                   	push   ebx
+ 80484b1:	e8 1a ff ff ff       	call   80483d0 <free@plt>
+ 80484b6:	58                   	pop    eax
+ 80484b7:	ff 77 08             	push   DWORD PTR [edi+0x8]
+ 80484ba:	e8 21 ff ff ff       	call   80483e0 <strdup@plt>
+ 80484bf:	83 c4 10             	add    esp,0x10
+ 80484c2:	89 c3                	mov    ebx,eax
+ 80484c4:	e8 37 ff ff ff       	call   8048400 <getegid@plt> <= jump
+
+ 80484c9:	89 45 c0             	mov    DWORD PTR [ebp-0x40],eax
+ 80484cc:	e8 1f ff ff ff       	call   80483f0 <geteuid@plt>
+ 80484d1:	8b 55 c0             	mov    edx,DWORD PTR [ebp-0x40]
+ 80484d4:	89 c7                	mov    edi,eax
+ 80484d6:	50                   	push   eax
+ 80484d7:	52                   	push   edx
+ 80484d8:	52                   	push   edx
+ 80484d9:	52                   	push   edx
+ 80484da:	e8 61 ff ff ff       	call   8048440 <setresgid@plt>
+ 80484df:	83 c4 0c             	add    esp,0xc
+ 80484e2:	57                   	push   edi
+ 80484e3:	57                   	push   edi
+ 80484e4:	57                   	push   edi
+ 80484e5:	e8 d6 fe ff ff       	call   80483c0 <setresuid@plt>
+ 80484ea:	83 c4 0c             	add    esp,0xc
+ 80484ed:	ff 75 c4             	push   DWORD PTR [ebp-0x3c]
+ 80484f0:	8d 45 d4             	lea    eax,[ebp-0x2c]
+ 80484f3:	89 75 dc             	mov    DWORD PTR [ebp-0x24],esi
+ 80484f6:	89 5d e0             	mov    DWORD PTR [ebp-0x20],ebx
+ 80484f9:	50                   	push   eax
+ 80484fa:	68 d5 87 04 08       	push   0x80487d5
+ 80484ff:	c7 45 d4 d5 87 04 08 	mov    DWORD PTR [ebp-0x2c],0x80487d5
+ 8048506:	c7 45 d8 e2 87 04 08 	mov    DWORD PTR [ebp-0x28],0x80487e2
+ 804850d:	c7 45 e4 00 00 00 00 	mov    DWORD PTR [ebp-0x1c],0x0
+ 8048514:	e8 17 ff ff ff       	call   8048430 <execve@plt>
+ 8048519:	8d 65 f0             	lea    esp,[ebp-0x10]
+ 804851c:	31 c0                	xor    eax,eax
+ 804851e:	59                   	pop    ecx
+ 804851f:	5b                   	pop    ebx
+ 8048520:	5e                   	pop    esi
+ 8048521:	5f                   	pop    edi
+ 8048522:	5d                   	pop    ebp
+ 8048523:	8d 61 fc             	lea    esp,[ecx-0x4]
+ 8048526:	c3                   	ret
+ 8048527:	90                   	nop
