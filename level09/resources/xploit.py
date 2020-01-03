@@ -9,5 +9,5 @@ for i, c in enumerate(ascii_str):
     c = int(c)
     out += chr((c-i)%128)
 
-print(out)
+print(out[:-1])
     
