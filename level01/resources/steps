@@ -1,0 +1,8 @@
+cat /etc/passwd
+
+echo 'flag01:42hDRfypTqqnw:3001:3001::/home/flag/flag01:/bin/bash' > /tmp/test
+
+john /tmp/test
+john --show /tmp/test
+
+flag01:abcdefg:3001:3001::/home/flag/flag01:/bin/bash
