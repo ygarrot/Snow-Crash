@@ -1,0 +1,11 @@
+find / -group flag00 2>/dev/null
+/usr/sbin/john
+/rofs/usr/sbin/john
+
+level00@SnowCrash:~$ cat /usr/sbin/john
+cdiiddwpgswtgt
+
+->decode.fr
+bruteforce -> nottoohardhere
+getflag
+
