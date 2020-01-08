@@ -1,2 +1,0 @@
-"strings level07" => ENV/LOGNAME
-export LOGNAME="hello; getflag"

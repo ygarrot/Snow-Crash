@@ -1,0 +1,8 @@
+gdb `which getflag`
+b *0x804898e (after ptrace)
+b *0x8048b02 (after getuid)
+r
+set $eax=1
+c
+set $eax=3014 (`id flag14`)
+c

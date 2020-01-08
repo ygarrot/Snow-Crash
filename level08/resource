@@ -1,2 +1,0 @@
-ln -s `pwd`/token /var/tmp/XPLOIT (Pour 2viter le strstr dans le code qui check si "token existe")
-./level08 /var/tmp/XPLOIT

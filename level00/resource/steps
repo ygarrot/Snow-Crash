@@ -6,6 +6,8 @@ level00@SnowCrash:~$ cat /usr/sbin/john
 cdiiddwpgswtgt
 
 ->decode.fr
-bruteforce -> rot11  -> nottoohardhere
-getflag
+essais de plusieurs possibilites -> rot11 -> nottoohardhere
 
+su flag00
+
+getflag

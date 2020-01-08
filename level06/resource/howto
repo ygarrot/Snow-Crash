@@ -1,12 +1,17 @@
 http://www.madirish.net/402
 https://security.stackexchange.com/questions/151142/understanding-preg-replace-filtering-exploitation
-google + preg_replace system
 
 notice :
 /e at the end of first pattern mean the code to be replaced with will be executed
 https://www.php.net/manual/en/reference.pcre.pattern.modifiers.php
 e (PREG_REPLACE_EVAL)
 
+The second problem is that the replacement uses the match inside a string,
+so the 2nd match will not be evaluated as code.
+
+Payload is inside double quoted strings, so just injecting any PHP code will not work
+You may think that simply escaping the string via " would solve the problem,
+but that will not work, as double quotes are escaped in all references.
 
 tried :
 [ x ${system("ls")}] : some php parsing error
@@ -14,7 +19,7 @@ the trick was to put bracket {} before ${} (  {${system(ls)}}  )
 it is because of the quotes "
 
 second argument of level06 executable take a string, notice that the function x() take 2 arguments
-the 2nd argument of this function is also pass to the executable (let's see in the dump)
+the 2nd argument of this function is also pass to the executable
 
 level06@SnowCrash:~$ cat /var/tmp/level06.php
 [x {${system($z)}}]

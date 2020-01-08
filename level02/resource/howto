@@ -1,4 +1,4 @@
-scp -P 4242 level02:f2av5il02puano7naaf6adaaf@$1:/home/user/level02/level02.pcap .
+scp -P 4242 level02@"$1":/home/user/level02/level02.pcap .
 apt install -y python3-pip
 pip3 install scapy
 python3 scap.py

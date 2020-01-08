@@ -1,0 +1,4 @@
+1. Send different strings to the binary and notice how it behaves.
+2. Get the token ("hexdump -Cv token") and run the scipt to reverse the token ("python3 abc.py")
+
+

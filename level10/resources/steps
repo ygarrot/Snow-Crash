@@ -1,5 +1,6 @@
 1. Open a VM and open 6969 port (smcsoda!)
 (iptables -A INPUT -p tcp --dport 6969 -j ACCEPT)
++ save
 2. launch nc script on the VM
 3. On SC VM launch symlinkswapper script
 4. Then run the_last_script on SC VM

